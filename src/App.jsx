@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { todoList } from "./slices/TodoSlices/TodoSlices";
 import TodoList from "./components/TodoList";
+import { adTodo } from "./slices/TodoSlices/TodoSlices";
 
 function App() {
   const [text, setText] =  useState("");
@@ -14,7 +14,7 @@ function App() {
   const handleSubmit =()=>{
     if(text){
       //dispatch diye data pathanor somoi reducer ke call korte hobe. aegulo jehetu array er moddhe rakhte hocche r UI te data dekhano lagbe tai map korte hobe tai text ke pathanor somoi {text} object akare data pathate hobe.
-      dispatch(todoList({
+      dispatch(adTodo({
         id: Date.now(),
         text: text
       }))

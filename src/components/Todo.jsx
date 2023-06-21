@@ -7,7 +7,7 @@ const Todo = ({ todo }) => {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
 
-  const handleDlelete = () => {
+  const handleDelete = () => {
     dispatch(deleteTodo(todo.id));
   };
 
@@ -22,7 +22,7 @@ const Todo = ({ todo }) => {
   const handleCancle = () => {
     console.log("calcle");
     setEdit(false);
-    setText(todo.text);
+    // setText(todo.text);
   };
 
   const handleSave = () => {
@@ -47,7 +47,7 @@ const Todo = ({ todo }) => {
         <div>
           <span>{todo.text}</span>
           <button onClick={handleEdit}>Edit</button>
-          <button onClick={handleDlelete}>Delete</button>
+          <button onClick={handleDelete}>Delete</button>
         </div>
       )}
     </div>
